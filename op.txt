@@ -1,0 +1,18 @@
+Конвертирование файла указывается полный путь -о далее путь и название нового файла
+pyside6-uic b_login.ui -o b_login.py
+
+---------хеширование пароля-----------
+import hashlib
+
+# Declaring Password
+password = 'GeeksPassword'
+# adding 5gz as password
+salt = "5gz"
+
+# Adding salt at the last of the password
+dataBase_password = password+salt
+# Encoding the password
+hashed = hashlib.md5(dataBase_password.encode())
+
+# Printing the Hash
+print(hashed.hexdigest())
