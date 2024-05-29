@@ -18,7 +18,7 @@ class Window(QtWidgets.QMainWindow):
         self.setWindowTitle("Переводчик")
 
         # Создаю обьект класса Translator
-        # translator = Translator
+        # self.translator = Translator
 
         # получаю словарь, где все языки
         self.languages = googletrans.LANGUAGES
@@ -67,6 +67,12 @@ class Window(QtWidgets.QMainWindow):
                 if value == self.ui.comboBox_2.currentText():
                     to_languages_key = key
 
+            # translator = Translator()
+            # text = self.ui.textEdit.toPlainText()
+            # translation = translator.translate(text, src="languages_key", dest="to_languages_key")
+            # self.ui.textEdit_2.setText(translation)
+
+
             # self.ui.textEdit.setText(languages_key)
             # self.ui.textEdit_2.setText(to_languages_key)
             #
@@ -74,9 +80,9 @@ class Window(QtWidgets.QMainWindow):
             # words = words.translate(src=languages_key, desk=to_languages_key)
             #
             # self.ui.textEdit_2.setText(str(words))
-            text = self.ui.textEdit.toPlainText()
-            text = translators.translate_text(text, src="languages_key", dest="to_languages_key")
-            self.ui.textEdit_2.setText(text)
+            # text = self.ui.textEdit.toPlainText()
+            # text = googletrans.Translator.translate(text, src="languages_key", dest="to_languages_key")
+            # self.ui.textEdit_2.setText(text)
 
         except Exception as e:
             QMessageBox.about(self, "Translator", str(e))

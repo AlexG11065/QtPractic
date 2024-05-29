@@ -5,29 +5,30 @@
 import time
 
 import psutil
+import requests
 from PySide6 import QtCore
 
 
 class SystemInfo(QtCore.QThread):
-    systemInfoReceived = ...  # TODO Создайте экземпляр класса Signal и передайте ему в конструктор тип данных передаваемого значения (в текущем случае list)
+    systemInfoReceived = QtCore.Signal(list)  #  Создайте экземпляр класса Signal и передайте ему в конструктор тип данных передаваемого значения (в текущем случае list)
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        ...  # TODO создайте атрибут класса self.delay = None, для управлением задержкой получения данных
+        self.delay = None  #  создайте атрибут класса self.delay = None, для управлением задержкой получения данных
 
     def run(self) -> None:  # TODO переопределить метод run
         if self.delay is None:  # TODO Если задержка не передана в поток перед его запуском
-            self.delay = ...  # TODO то устанавливайте значение 1
+            self.delay = 1  # TODO то устанавливайте значение 1
 
         while True:  # TODO Запустите бесконечный цикл получения информации о системе
-            cpu_value = psutil  # TODO с помощью вызова функции cpu_percent() в пакете psutil получите загрузку CPU
-            ram_value = ...  # TODO с помощью вызова функции virtual_memory().percent в пакете psutil получите загрузку RAM
-            self.systemSignal  # TODO с помощью метода .emit передайте в виде списка данные о загрузке CPU и RAM
-            time  # TODO с помощью функции .sleep() приостановите выполнение цикла на время self.delay
+            cpu_value = psutil.cpu_percent()  #  с помощью вызова функции cpu_percent() в пакете psutil получите загрузку CPU
+            ram_value = psutil.virtual_memory().percent  #  с помощью вызова функции virtual_memory().percent в пакете psutil получите загрузку RAM
+            self.systemInfoReceived.emit([cpu_value, ram_value])  #  с помощью метода .emit передайте в виде списка данные о загрузке CPU и RAM
+            time.sleep(self.delay)  #  с помощью функции .sleep() приостановите выполнение цикла на время self.delay
 
 
 class WeatherHandler(QtCore.QThread):
-    # TODO Пропишите сигналы, которые считаете нужными
+    weatherInfoReceived = QtCore.Signal(list) # TODO Пропишите сигналы, которые считаете нужными
 
     def __init__(self, lat, lon, parent=None):
         super().__init__(parent)
@@ -47,9 +48,14 @@ class WeatherHandler(QtCore.QThread):
         self.__delay = delay
 
     def run(self) -> None:
-        # TODO настройте метод для корректной работы
+        self.started.emit()# TODO настройте метод для корректной работы
 
         while self.__status:
+
+            response = requests.get(self.__api_url)
+            data = response.text
+            self.weatherInfoReceived.emit(data)
+            time.sleep(self.__delay)
             # TODO Примерный код ниже
             """
             response = requests.get(self.__api_url)
