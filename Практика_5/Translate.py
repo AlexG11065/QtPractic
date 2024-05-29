@@ -1,10 +1,7 @@
-import sys
-
-import googletrans
 from PySide6 import QtWidgets
 from PySide6.QtWidgets import QMainWindow
 from googletrans import Translator, constants
-from Практика_5.ui.form import Ui_MainWindow
+from Практика_5.ui.form_new import Ui_MainWindow
 from language_list import languages
 
 
@@ -41,7 +38,16 @@ class WindowApp(QMainWindow):
         self.ui.textEdit.clear()
         self.ui.textEdit_2.clear()
 
+
+# def main():
+#     app = QtWidgets.QApplication()
+#     window = WindowApp()
+#     window.show()
+#     app.exec()
+
+
 if __name__ == "__main__":
+    # main()
     app = QtWidgets.QApplication()
 
     window = WindowApp()

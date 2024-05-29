@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'form.ui'
+## Form generated from reading UI file 'form_new.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.1
 ##
@@ -16,23 +16,54 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QHBoxLayout, QLabel,
-    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
+    QMainWindow, QPushButton, QSizePolicy, QSplitter,
     QStatusBar, QTextEdit, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(864, 469)
-        MainWindow.setStyleSheet(u"background-color: rgb(207, 207, 207);")
+        MainWindow.resize(719, 311)
+        MainWindow.setStyleSheet(u"QWidget {\n"
+"	\n"
+"	background-color: rgb(255, 255, 255);\n"
+"}\n"
+"\n"
+"QTextEdit {\n"
+"	border-radius: 8px;\n"
+"	border: 1px solid #e0e4e7;\n"
+"	padding: 5px 15px;\n"
+"}\n"
+"\n"
+"QPushButton {\n"
+"	background-color:  #0000CD;\n"
+"	color: #fff;\n"
+"	font-weight: 700;\n"
+"	border-radius: 8px;\n"
+"	border: 1px solid #0d6efd;\n"
+"	padding: 5px 15px;\n"
+"	margin-top: 10px;\n"
+"	outline: 0px;\n"
+"}\n"
+"\n"
+"QPushButton:focus {\n"
+"	background-color: #0b5ed7;\n"
+"	border: 3px solid #9ac3fe;\n"
+"}\n"
+"\n"
+"QComboBox {\n"
+"	border-radius: 8px;\n"
+"	border: 1px solid #e0e4e7;\n"
+"	padding: 5px 15px;\n"
+"}")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.verticalLayout_5 = QVBoxLayout(self.centralwidget)
-        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.verticalLayout_4 = QVBoxLayout()
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.verticalLayout_3 = QVBoxLayout(self.centralwidget)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
         font = QFont()
@@ -41,28 +72,8 @@ class Ui_MainWindow(object):
         font.setItalic(True)
         self.label.setFont(font)
 
-        self.horizontalLayout_2.addWidget(self.label)
+        self.verticalLayout_2.addWidget(self.label)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_2.addItem(self.horizontalSpacer)
-
-        self.label_2 = QLabel(self.centralwidget)
-        self.label_2.setObjectName(u"label_2")
-        font1 = QFont()
-        font1.setPointSize(11)
-        font1.setItalic(True)
-        self.label_2.setFont(font1)
-
-        self.horizontalLayout_2.addWidget(self.label_2)
-
-
-        self.verticalLayout_4.addLayout(self.horizontalLayout_2)
-
-        self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.verticalLayout_2 = QVBoxLayout()
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.comboBox = QComboBox(self.centralwidget)
         self.comboBox.setObjectName(u"comboBox")
 
@@ -70,9 +81,9 @@ class Ui_MainWindow(object):
 
         self.textEdit = QTextEdit(self.centralwidget)
         self.textEdit.setObjectName(u"textEdit")
-        font2 = QFont()
-        font2.setPointSize(10)
-        self.textEdit.setFont(font2)
+        font1 = QFont()
+        font1.setPointSize(10)
+        self.textEdit.setFont(font1)
         self.textEdit.setStyleSheet(u"background-color: rgb(211, 211, 211);")
 
         self.verticalLayout_2.addWidget(self.textEdit)
@@ -80,27 +91,31 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addLayout(self.verticalLayout_2)
 
-        self.verticalLayout_3 = QVBoxLayout()
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.pushButtonTrans = QPushButton(self.centralwidget)
+        self.splitter = QSplitter(self.centralwidget)
+        self.splitter.setObjectName(u"splitter")
+        self.splitter.setOrientation(Qt.Orientation.Vertical)
+        self.pushButtonTrans = QPushButton(self.splitter)
         self.pushButtonTrans.setObjectName(u"pushButtonTrans")
-
-        self.verticalLayout_3.addWidget(self.pushButtonTrans)
-
-        self.verticalSpacer = QSpacerItem(20, 100, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
-
-        self.verticalLayout_3.addItem(self.verticalSpacer)
-
-        self.pushButtonDel = QPushButton(self.centralwidget)
+        self.splitter.addWidget(self.pushButtonTrans)
+        self.pushButtonDel = QPushButton(self.splitter)
         self.pushButtonDel.setObjectName(u"pushButtonDel")
+        icon = QIcon(QIcon.fromTheme(u"edit-delete"))
+        self.pushButtonDel.setIcon(icon)
+        self.splitter.addWidget(self.pushButtonDel)
 
-        self.verticalLayout_3.addWidget(self.pushButtonDel)
-
-
-        self.horizontalLayout.addLayout(self.verticalLayout_3)
+        self.horizontalLayout.addWidget(self.splitter)
 
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
+        self.label_2 = QLabel(self.centralwidget)
+        self.label_2.setObjectName(u"label_2")
+        font2 = QFont()
+        font2.setPointSize(11)
+        font2.setItalic(True)
+        self.label_2.setFont(font2)
+
+        self.verticalLayout.addWidget(self.label_2)
+
         self.comboBox_2 = QComboBox(self.centralwidget)
         self.comboBox_2.setObjectName(u"comboBox_2")
 
@@ -120,10 +135,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addLayout(self.verticalLayout)
 
 
-        self.verticalLayout_4.addLayout(self.horizontalLayout)
-
-
-        self.verticalLayout_5.addLayout(self.verticalLayout_4)
+        self.verticalLayout_3.addLayout(self.horizontalLayout)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
@@ -138,10 +150,10 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u044f\u0437\u044b\u043a", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u044f\u0437\u044b\u043a", None))
-        self.textEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u043f\u0438\u0448\u0438\u0442\u0435 \u0442\u0435\u043a\u0441\u0442 \u0434\u043b\u044f \u043f\u0435\u0440\u0435\u0432\u043e\u0434\u0430...", None))
+        self.textEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0442\u0435\u043a\u0441\u0442...", None))
         self.pushButtonTrans.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0435\u0440\u0435\u0432\u0435\u0441\u0442\u0438", None))
         self.pushButtonDel.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0447\u0438\u0441\u0442\u0438\u0442\u044c", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u044f\u0437\u044b\u043a", None))
         self.textEdit_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\u041f\u0435\u0440\u0435\u0432\u043e\u0434...", None))
     # retranslateUi
 

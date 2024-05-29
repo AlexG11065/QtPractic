@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>719</width>
+    <height>311</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+	
+	background-color: rgb(255, 255, 255);
+}
+
+QTextEdit {
+	border-radius: 8px;
+	border: 1px solid #e0e4e7;
+	padding: 5px 15px;
+}
+
+QPushButton {
+	background-color:  #0000CD;
+	color: #fff;
+	font-weight: 700;
+	border-radius: 8px;
+	border: 1px solid #0d6efd;
+	padding: 5px 15px;
+	margin-top: 10px;
+	outline: 0px;
+}
+
+QPushButton:focus {
+	background-color: #0b5ed7;
+	border: 3px solid #9ac3fe;
+}
+
+QComboBox {
+	border-radius: 8px;
+	border: 1px solid #e0e4e7;
+	padding: 5px 15px;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+            <italic>true</italic>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Выбрать язык</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox"/>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="textEdit">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(211, 211, 211);</string>
+          </property>
+          <property name="placeholderText">
+           <string>Введите текст...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QSplitter" name="splitter">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <widget class="QPushButton" name="pushButtonTrans">
+         <property name="text">
+          <string>Перевести</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButtonDel">
+         <property name="text">
+          <string>Очистить</string>
+         </property>
+         <property name="icon">
+          <iconset theme="edit-delete"/>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+            <italic>true</italic>
+           </font>
+          </property>
+          <property name="text">
+           <string>Выбрать язык</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox_2"/>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="textEdit_2">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <italic>true</italic>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(211, 211, 211);</string>
+          </property>
+          <property name="placeholderText">
+           <string>Перевод...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

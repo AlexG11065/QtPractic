@@ -1,5 +1,7 @@
-languages = {"Russian": "ru", "English": "en", "Ukrainian": "uk", "Germany": "de", "France": "fr",
-             "Spanish": "es", "Italian": "it", "Polish": "pl", 'Afrikaans': 'af', 'Armenian': 'hy'}
+languages = {"Afrikaans": "af", "Albanian": "sq", "Russian": "ru", "English": "en", "Ukrainian": "uk", "Germany": "de",
+             "France": "fr", "Spanish": "es", "Italian": "it", "Polish": "pl",  "Armenian": "hy", "Estonian": "et",
+             "Kazakh": "kk"
+             }
 
 LANGUAGES = {
     'af': 'afrikaans',
@@ -25,7 +27,7 @@ LANGUAGES = {
     'nl': 'dutch',
     'en': 'english',
     'eo': 'esperanto',
-    'et': 'estonian',
+    'et': 'Estonian',
     'tl': 'filipino',
     'fi': 'finnish',
     'fr': 'french',
